@@ -1,0 +1,11 @@
+# Render Blueprint — otomatik deploy
+services:
+  - type: web
+    name: tmcell-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 bot_webhook.py
+    envVars:
+      - key: WEBHOOK_URL
+        sync: false
+    plan: free
