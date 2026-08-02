@@ -1,0 +1,23 @@
+# Koyeb — otomatik deploy (opsiyonel, dashboard da yetiyor)
+name: tmcell-bot
+service:
+  name: tmcell-bot
+  instance:
+    type: nano
+  ports:
+    - port: 8000
+      protocol: http
+  routes:
+    - path: /
+  healthcheck:
+    path: /
+    port: 8000
+  run:
+    command:
+      - python
+      - bot.py
+  env:
+    - key: TELEGRAM_BOT_TOKEN
+      value: REPLACE_WITH_YOUR_TOKEN
+    - key: PORT
+      value: "8000"
