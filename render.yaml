@@ -1,11 +1,13 @@
-# Render Blueprint — otomatik deploy
+# Render Blueprint — otomatik deploy (eski; tercih Koyeb 7/24)
 services:
   - type: web
     name: tmcell-bot
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python3 bot_webhook.py
-    envVars:
-      - key: WEBHOOK_URL
-        sync: false
+    env: docker
     plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: PORT
+        value: "8000"

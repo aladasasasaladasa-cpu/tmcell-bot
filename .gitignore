@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Veritabanı (kullanıcı verileri — asla commit etme!)
+*.db
+*.sqlite
+.offset
+
+# Gizli bilgiler (token asla buraya yazılmaz)
+.env
+
+# İşletim sistemi
+.DS_Store
